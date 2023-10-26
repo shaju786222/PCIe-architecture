@@ -1,0 +1,21 @@
+PCI Express transfers packets to accomplish data transfers between devices. A root complex can communicate with an endpoint. An endpoint can communicate with a root complex. An endpoint can communicate with another endpoint. Communication involves the transmission and reception of packets called Transaction Layer packets (TLPs).
+
+PCI Express transactions categorized into four groups: 
+1)	memory, 2) IO, 3) configuration, and 4) message transactions. 
+
+These all transactions are posted and non-posted transactions.
+ 
+Posted transactions are ones where the requester does not expect to and will not receive a completion Transaction Layer Packet (TLP).  If the write completer encounters an error, the requester will not know about it.  But, it is possible for the write completer to generate an error message notification to the Root Complex.
+Requests that are considered posted transactions are:
+•	Memory Writes
+•	Messages
+
+ 
+Non-Posted transactions are ones where the requester expects to receive a completion Transaction Layer Packet (TLP) from the device completing the request.  Requester sends the TLP packet to the Completer, and the Completer will send the completion TLP packets back to the Requester either with data or without data depending on the request sent to the Completer.
+	
+•	Memory Reads
+•	Memory Read Lock
+•	I/O Reads
+•	I/O Writes
+•	Configuration Reads (both Type 0 and Type 1)
+•	Configuration Writes (both Type 0 and Type 1)
