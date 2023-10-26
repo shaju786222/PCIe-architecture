@@ -19,3 +19,5 @@ Non-Posted transactions are ones where the requester expects to receive a comple
 •	I/O Writes
 •	Configuration Reads (both Type 0 and Type 1)
 •	Configuration Writes (both Type 0 and Type 1)
+
+
